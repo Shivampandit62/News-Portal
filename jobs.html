@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+
+<!--start heading-->
+<div class="row heading text-center py-3">
+    <div class="col-sm-6 mx-auto">
+        <p class="fs-3">Latest <b class="txt-color1">Jobs Here.. <i class="fa-solid fa-phone"></i></b></p>
+    <i>Explore the dynamic field of web design and the various job titles that shape the industry.</i>
+<hr/>
+        </div>
+</div>
+<!--end heading-->
+
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+
+            {% for x in jobsdata %}
+
+            <div class="col-sm-6 text-center">
+                <div class="card p-3 border-0 rounded-0 shadow-lg mb-3">
+                   <a href="{{x.title_link}}" target="_blank">{{x.title}} </a>
+                    <b  style="font-size:12px;">
+                        <i class="fa-solid fa-calendar-days txt-color1"></i>
+                        Posted Date :  {{x.posted_date}}</b>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

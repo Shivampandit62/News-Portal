@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<style>
+    .form-control
+    {
+        height:55px;
+        border-radius:0px !important;
+
+    }
+    .input-group-text input
+    {
+        background:transparent;
+        color:white;
+        height:50px;
+        border:none;
+    }
+
+
+</style>
+
+<!--start heading-->
+<div class="row heading text-center py-2">
+    <div class="col-sm-6 mx-auto"><p class="fs-3 m-0">Our<b class="txt-color1"> News <i class="fa-solid fa-rss"></i></b></p>
+    <i>You all will get to watch all the news on this channel.</i>
+<hr/>
+        </div>
+</div>
+<!--end heading-->
+
+
+<!-- start searching section -->
+<div class="row">
+    <div class="col-sm-6 mx-auto">
+        <form>
+        <div class="input-group shadow-lg mb-3">
+
+            <input name="search" type="text" class="form-control" placeholder="Search..">
+            <i class="input-group-text bg-mycolor1 p-0 rounded-0">
+                <input type="submit" value="Search news"/>
+            </i>
+        </div>
+            </form>
+    </div>
+</div>
+<!-- end searching section -->
+
+
+
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        {% for i in citydata %}
+        <a href="/news?cityid={{i.id}}" class="badge bg-mycolor1 text-light rounded-pill">{{i.city_name}}</a>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+            <div class="col-sm-3 my-3">
+                <ul class="list-group">
+  <li class="list-group-item bg-mycolor1 text-light"><b>Categories</b></li>
+                 {% for x in categorydata %}
+ <a style="text-decoration:none;" href="/news?catid={{x.id}}"> <li class="list-group-item">{{x.category_name}}
+
+ </li></a>
+                    {% endfor %}
+
+<a href="/news/" style="text-decoration:none;"> <li class="list-group-item">All News
+
+ </li></a>
+
+</ul>
+            </div>
+            <div class="col-sm-9">
+
+                   {% for i in ndata %}
+            <div class="card border-0 shadow p-2 mb-2 bg-body-tertiary rounded">
+  <div class="row g-0">
+    <div class="col-md-4 ">
+      <img src="../{{i.news_picture}}" style="max-height:360px;" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title m-0" style="height:80px;overflow-y:auto;">{{i.headline}}</h5>
+        <p class="card-text">
+
+            <b>{{i.news_category}} news | {{i.news_city}} </b><br/>
+            <small class="text-body-secondary">Posted Date : {{i.posted_date}}</small>
+          <a href="/newsdetails?nid={{i.id}}" class="badge bg-mycolor1 text-light rounded-pill" style="text-decoration:none;"><i class="fa-solid fa-eye"></i> View More</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+                {% endfor %}
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

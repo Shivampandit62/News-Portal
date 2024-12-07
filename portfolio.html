@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+
+<!--start heading-->
+<div class="row heading text-center py-4 bg-img">
+    <div class="col-sm-6 mx-auto">
+        <h1><p class="fs-1 bg-warning">My <b class="txt-color1">Profile</b>
+            <i class="fa-regular fa-id-card"></i></p></h1>
+        <p><i>Welcome To My Profile... I'm going to introduce myself.I'm intrested in that... My life style is very simple.</i></p>
+    </div>
+</div>
+<!--end heading-->
+
+
+
+<!---start image--->
+<div class="row" >
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4 shadow p-3 w-25 mb-5 bg-body-tertiary  rounded ps-5">
+    <img src="{% static 'images/shivam.jpg' %}" class="img-fluid rounded-start rounded-end" alt="...">
+</div>
+
+<div class="col-sm-4 shadow p-3 mb-5 bg-body-tertiary rounded ps-5">
+                <b class="fs-5"> Intro<b class="txt-color1">duction :-</b></b><br/><br/>
+                <b class="txt-color1"><i class="fa-solid fa-user-minus"></i> Name :-</b>
+                <p class="ps-5">Shivam Pandey.</p>
+
+                <b class="txt-color1"><i class="fa-solid fa-phone-volume"></i> Contect Number :-</b><br/>
+                <a href="tel:+91, 9616129065" class="ps-5" style="text-decoration:none;color:black;">+91, 9369485911...</a><br/>
+                <a href="tel:+91, 9569282479" class="ps-5" style="text-decoration:none;color:black;">+91, 7844011619...</a><br/><br/>
+                <b class="txt-color1"><i class="fa-solid fa-at"></i> Email Id :-</b><br/>
+                <a href="mailto:shivampandey30791@gmail.com" class="ps-5" style="text-decoration:none;color:black;">shivampandey@30791@gmail.com  ...</a><br/></br></br>
+                <b class="txt-color1"><i class="fa-solid fa-map-location-dot"></i> Address :-</b><br/>
+                <p class="ps-5"> Uttar Pradesh,Jaunpur...</p></br>
+                <b class="txt-color1"><i class="fa-solid fa-wand-magic-sparkles"></i> Skill :-</b><br/>
+                <p class="ps-5"> Web Devloper...</p>
+
+
+            </div>
+
+    <div class="col-sm-2"></div>
+
+</div>
+
+</div>
+<!---end image--->
+
+
+
+{% endblock %}
